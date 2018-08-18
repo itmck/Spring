@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--springIoC:把创建对象的权利反转给Spring 需要什么就去找Spring要
+    -->
+
+    <!--
+        非静态工厂
+        class:工厂类的全限定名
+      	factory-method:工厂类的静态方法名
+
+    -->
+    <!--将工厂类交给spring管理-->
+    <bean id="factory" class="com.qf.spring.springFactory_1.Factory"/>
+    <!--
+       	非静态工厂
+       	factory-bean:工厂的id
+       	factory-method:工厂的非静态方法名
+         -->
+    <bean id="user" factory-bean="factory" factory-method="getUser"/>
+
+</beans>

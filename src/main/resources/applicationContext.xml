@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--springIoC:把创建对象的权利反转给Spring 需要什么就去找Spring要
+    -->
+
+    <!--注入user对象,把User交给Spring去管理
+
+        id:bean名字,通过该id可以获取bean的对象,id是唯一的
+        class:类的全限定名
+        Scope:指定bean的创建方式和生命周期
+                         singleton 默认的   单例的
+        		        prototype 多例的
+        		         request
+        		         session
+        		         globalsession
+
+        lazy-init:只对scope="singleton"的时候有效
+        lazy-init=false  默认值  加载配置文件的时候就会创建对象
+        lazy-init=true  加载配置文件的时候 不会创建
+        init-method:初始化方法
+        destroy-method:销毁方法
+
+    -->
+    <bean id="user" class="com.qf.spring.springioc.User" />
+
+</beans>
